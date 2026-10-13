@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1731">
+  <meta name="description" content="A little world beneath the stars, made of flowers, autumn, and words.">
+  <title>For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#welcome" aria-label="Back to beginning"><span class="brand-star">✦</span> a little world for you</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#garden">Garden</a><a href="#autumn">Autumn</a><a href="#journal">Journal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="welcome">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="hero-moon"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> A quiet little place <span></span></p>
+        <h1>Somewhere between<br>the <em>stars</em> and the flowers.</h1>
+        <p class="hero-sub">A little world made of midnight blue, autumn air, flowers, and words that are better felt slowly.</p>
+        <a class="primary-btn" href="#garden" onclick="toggleMusic()">Enter the garden <span>↗</span></a>
+        <p class="scroll-note">Welcome</p>
+      </div>
+      <div class="hero-flower flower-left" aria-hidden="true">✿</div>
+      <div class="hero-flower flower-right" aria-hidden="true">✽</div>
+      <div class="hero-bottom"><span>01 / A SMALL BEGINNING</span><span>SCROLL TO WANDER ↓</span></div>
+    </section>
+
+    <section class="intro section" id="garden">
+      <div class="section-heading reveal">
+        <p class="eyebrow dark">A PLACE TO WANDER</p>
+        <h2>The enchanted<br><em>garden.</em></h2>
+        <p>Some things are lovely enough to simply stop and notice.</p>
+      </div>
+      <div class="garden-scene reveal">
+        <div class="garden-sky"></div><div class="butterflies" id="butterflies" aria-hidden="true"></div>
+        <div class="garden-orb orb-one"></div><div class="garden-orb orb-two"></div>
+        <div class="garden-hill hill-back"></div><div class="garden-hill hill-front"></div>
+        <div class="garden-path"></div>
+        <button class="plant rose" data-flower="rose" aria-label="Discover the rose"><span class="bloom">✿</span><span class="stem"></span><span class="leaf leaf-a"></span><span class="leaf leaf-b"></span></button>
+        <button class="plant tulip" data-flower="tulip" aria-label="Discover the tulip"><span class="bloom">❀</span><span class="stem"></span><span class="leaf leaf-a"></span></button>
+        <button class="plant lily" data-flower="lily" aria-label="Discover the white lily"><span class="bloom">✺</span><span class="stem"></span><span class="leaf leaf-a"></span><span class="leaf leaf-b"></span></button>
+        <button class="plant rose rose-two" data-flower="rose2" aria-label="Discover another rose"><span class="bloom">✿</span><span class="stem"></span><span class="leaf leaf-a"></span></button>
+        <div class="scene-caption"><span>THE GARDEN AT BLUE HOUR</span><span>Tap a flower to uncover a little thought</span></div>
+      </div>
+      <div class="flower-note" id="flowerNote" aria-live="polite"><span class="note-icon">✧</span><p>Choose whichever flower catches your eye.</p></div>
+    </section>
+
+    <section class="autumn section" id="autumn">
+      <div class="autumn-photo" role="img" aria-label="An imagined autumn path under a blue evening sky"></div>
+      <div class="autumn-content reveal">
+        <p class="eyebrow"><span></span> A SLOWER SEASON <span></span></p>
+        <h2>Somewhere,<br>it's always <em>autumn.</em></h2>
+        <p>Golden leaves, cooler evenings, and that lovely in-between feeling when the world seems to pause for a moment.</p>
+        <button class="text-btn" id="leafButton">Let a little autumn fall <span>↘</span></button>
+      </div>
+      <div class="falling-leaves" id="fallingLeaves" aria-hidden="true"></div>
+      <div class="autumn-footer">A PATH WITH NO PARTICULAR DESTINATION <span>✦</span></div>
+    </section>
+
+    <section class="journal section" id="journal">
+      <div class="journal-decor" aria-hidden="true">❧</div>
+      <div class="section-heading reveal">
+        <p class="eyebrow dark">WORDS, WHEN THEY FIND US</p>
+        <h2>The little<br><em>poetry room.</em></h2>
+        <p>Sometimes a thought stays for a while. Sometimes it becomes a sentence.</p>
+      </div>
+      <article class="poem-card reveal">
+        <div class="paper-top"><span>NOTES FROM A QUIET EVENING</span><span>✧</span></div>
+        <div class="poem-content">
+          <p class="handwritten">For the moments that linger</p>
+          <p class="poem-line">Maybe it's the way the evening turns blue,</p>
+          <p class="poem-line">or the way a small moment stays;</p>
+          <p class="poem-line">how a flower can be just a flower,</p>
+          <p class="poem-line">and still brighten an ordinary day.</p>
+          <p class="poem-line gap-line">Some things don't ask to be understood,</p>
+          <p class="poem-line">they only ask to be seen—</p>
+          <p class="poem-line">like stars appearing one by one,</p>
+          <p class="poem-line">like a little patch of green.</p>
+          <p class="poem-sign">— a thought</p>
+        </div>
+        <div class="paper-bottom"><span>KEEP WHAT FEELS LIKE YOU</span><span>✿</span></div>
+      </article>
+      <p class="journal-footnote">For You.</p>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<audio id="myAudio" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
